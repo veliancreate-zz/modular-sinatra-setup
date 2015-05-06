@@ -9,7 +9,7 @@ class AppName < Sinatra::Base
     erb :"/../views/index"
   end
 
-  set :views, proc { File.join(root, 'views') }
-
+  set :views, proc { File.join(root, '..', 'views') }
+  set :public_folder, proc { File.join(root, '..', '..', 'public') }
   run! if app_file == $PROGRAM_NAME
 end
